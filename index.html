@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「2026 Mamma蜜呀 馬上發蜂」母親節市集活動 領取查詢系統</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+  <div class="bg-decoration deco-1"></div>
+  <div class="bg-decoration deco-2"></div>
+  <div class="bg-decoration deco-3"></div>
+
+  <section class="page" id="loginPage">
+    <div class="panel login-panel">
+      <div class="panel-badge">2026 Mamma蜜呀 馬上發蜂 母親節市集活動 領取查詢系統</div>
+      <h1 class="title">操作人員登入</h1>
+      <p class="subtitle">請先輸入操作人員名字，再進入系統。</p>
+
+      <div class="form-group">
+        <label for="operatorName">操作人員名字</label>
+        <input id="operatorName" type="text" placeholder="請輸入操作人員名字">
+      </div>
+
+      <button class="btn btn-primary btn-large" id="enterBtn">進入系統</button>
+    </div>
+  </section>
+
+  <section class="page hidden" id="mainPage">
+    <div class="panel main-panel">
+      <div class="top-area">
+        <div>
+          <div class="panel-badge">2026 Mamma蜜呀 馬上發蜂</div>
+          <div class="current-operator">
+            目前操作人員：<span id="showOperator"></span>
+          </div>
+        </div>
+        <button class="btn btn-outline" id="backBtn">更換操作人員</button>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-left">
+          <h2>學號查詢</h2>
+          <p>輸入學號後即可查詢領取狀態。</p>
+        </div>
+        <div class="hero-right">🎓</div>
+      </div>
+
+      <div class="search-card">
+        <label for="studentId">學號</label>
+        <div class="search-row">
+          <input id="studentId" type="text" placeholder="請輸入學號">
+          <button class="btn btn-outline scan-btn" id="scanBtn" type="button">📷</button>
+          <button class="btn btn-primary search-btn" id="searchBtn">開始查詢</button>
+        </div>
+
+        <div id="scanner" class="scanner-box hidden"></div>
+      </div>
+
+      <div id="progressWrap" class="progress-wrap hidden">
+        <div class="progress-text">查詢中，請稍候...</div>
+        <div class="progress-track">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="result-card hidden" id="resultArea">
+        <div class="status-chip" id="resultBadge"></div>
+        <div class="result-title" id="resultText"></div>
+
+        <div class="detail-box" id="detailBox">
+          <div class="detail-main" id="detailMain"></div>
+          <div class="detail-sub" id="detailSub"></div>
+        </div>
+
+        <div class="register-area hidden" id="registerBox">
+          <div class="form-group">
+            <label for="studentName">學生名字</label>
+            <input id="studentName" type="text" placeholder="請輸入學生名字">
+          </div>
+
+          <div class="select-block hidden" id="cardBlock">
+            <label>發卡片</label>
+            <div class="select-grid">
+              <button type="button" class="select-option postcard-option" id="btnPostcard">
+                <span class="postcard-tip">消費200</span>
+                <span>明信片</span>
+              </button>
+              <button type="button" class="select-option" id="btnJob">
+                <span>徵才闖關卡</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="select-block hidden" id="giftBlock">
+            <label>領取禮品</label>
+            <div class="select-grid">
+              <button type="button" class="select-option" id="btnFlower">
+                <span>DIY花束</span>
+              </button>
+              <button type="button" class="select-option" id="btnSoap">
+                <span>香皂花束</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-yellow" id="registerBtn">登記</button>
+            <button class="btn btn-soft" id="cancelBtn">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+  <div class="cis-footer">
+    <img src="https://drive.google.com/uc?export=view&id=1M-1YfdRTyGj5nvIkfSPHXjzQO_TKu6Ao" alt="CIS">
+  </div>
+</body>
+</html>
